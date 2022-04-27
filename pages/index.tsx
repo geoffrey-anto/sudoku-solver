@@ -131,10 +131,10 @@ export default Home
 // find largest connected component > --DONE
 // Clean non connnected objects > --DONE
 // Find Conner Points (Manhattan distnace) --DONE
-// Find the Homography Matrix > --DONE
-// Apply the Homography Matrix to the image > --DONE
-// divide the image by 9 rows and colums
-// Make a array each small grid
+// Find the Homography Matrix --DONE
+// Apply the Homography Matrix to the image --DONE
+// divide the image by 9 rows and colums  --DONE
+// Make a array each small grid --DONE
 // Predict each small grid from 1 to 9 or none
 // Fill up the matrix with the prediction
 // solve the sodoku puzzle (Matrix we just computed)
