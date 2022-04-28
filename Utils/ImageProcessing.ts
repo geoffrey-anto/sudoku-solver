@@ -1,6 +1,8 @@
 import Image from './Image'
 
-const readImage = (video: HTMLVideoElement, width: number, height: number) => {
+const readImage = (video: HTMLVideoElement) => {
+  const width = video.width;
+  const height = video.height;
   const canvas = document.createElement('canvas')
   canvas.width = width
   canvas.height = height

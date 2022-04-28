@@ -98,8 +98,8 @@ const Home: NextPage = () => {
             //     ctx.putImageData(grids[i].numberImage.toImageData(), grids[i].numberImage.height*i, grids[i].numberImage.width*i)
             //   }
             // }
+            ctx.putImageData(aplied.toImageData(), 0, 0)
             // ctx.rect(topLeft?.x, topLeft?.y, largestConnectedComponent?.width, largestConnectedComponent?.height);
-            ctx.fillRect(100, 100, 10, 10);
             // ctx.fillRect(nearest.topRight.x, nearest.topRight.y, 10, 10);
             // ctx.fillRect(nearest.bottomLeft.x, nearest.bottomLeft.y, 10, 10);
             // ctx.fillRect(nearest.bottomRight.x, nearest.bottomRight.y, 10, 10);
@@ -107,7 +107,7 @@ const Home: NextPage = () => {
           }
         }
       }
-    }, 2000)
+    }, 10000)
   }, [])
   return (
     <div className="">
@@ -136,7 +136,7 @@ export default Home
 // divide the image by 9 rows and colums  --DONE
 // Make a array each small grid --DONE
 // Predict each small grid from 1 to 9 or none
-// Fill up the matrix with the prediction
+// Fill up the matrix with the prediction -- DONE
 // solve the sodoku puzzle (Matrix we just computed)
 // Draw it on a canvas with the original image after multiplying it with the homography matrix
 // Draw the grid on the canvas

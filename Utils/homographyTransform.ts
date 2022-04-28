@@ -1,3 +1,4 @@
+import { Point } from './largestConnectedConmonent'
 import { ConnerPoints } from './getConnerPoints'
 import * as math from 'mathjs'
 import Image from './Image'
@@ -37,10 +38,7 @@ export function applyHomographicTransform(
   return res
 }
 
-export function homographicTransform(
-  size: number,
-  corners: ConnerPoints
-) {
+export function homographicTransform(size: number, corners: ConnerPoints) {
   const A: math.Matrix = math.zeros(8, 8) as math.Matrix
   A.set([0, 2], 1)
   A.set([1, 5], 1)
@@ -91,5 +89,19 @@ export function homographicTransform(
     g: H.get([6]),
     h: H.get([7]),
   } as Transform
-  return transform;
+  return transform
+}
+
+export function transformPoint(transform: Transform, points: Point) {
+  const { a, b, c, d, e, f, g, h } = transform
+  const { x, y } = points
+  const l = b * y + c
+  const m = h * y + 1
+  const n = e * y + f
+  const o = h * y + 1
+
+  const sx = Math.floor((a * x + l) / (g * x + m))
+  const sy = Math.floor((d * x + n) / (g * x + o))
+
+  return {x: sx, y: sy};
 }

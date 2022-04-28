@@ -83,7 +83,6 @@ export default function extractBoxes(greyScale: Image, thresholded: Image) {
           }
         }
       }
-      // sanity check to make sure we actually found something and we didn't get something weird
       const foundWidth = maxX - minX;
       const foundHeight = maxY - minY;
       if (
